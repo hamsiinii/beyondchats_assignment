@@ -31,7 +31,7 @@ A full-stack application that:
 1. **Clone or download the project**
 
 ```bash
-   cd robo-repo
+   cd beyondchats_assignment
 ```
 
 2. **Install dependencies**
@@ -46,8 +46,8 @@ A full-stack application that:
 
    1. install Prisma
 
-```npm install -g prisma
-
+```bash
+npm install -g prisma
 ```
 
 2. Initialize the database
