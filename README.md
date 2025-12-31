@@ -16,7 +16,7 @@ A full-stack application that:
 
 **Backend:** Node.js, Express, Prisma, PostgreSQL  
 **Frontend:** React, Vite, TailwindCSS  
-**AI:** Claude API  
+**AI:** OPENAI API  
 **Deployment:** Render (Backend), Vercel (Frontend)
 
 ## Setup Instructions
