@@ -84,7 +84,9 @@ this is for phase 1.
 
 ## System Flow Diagram
 
-![System Flow Diagram](diagrams/Group 22.png)
+<p align="center">
+  <img src="diagrams/Group 22.png" alt="System Flow Diagram" style="max-width:70%; height:auto;" />
+</p>
 
 ## Live Links
 
