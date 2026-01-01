@@ -134,7 +134,7 @@ npm run dev
 **Phase 3**
 
 <p align="center">
-  <img src="diagrams/phase2.jpeg" alt="System Flow Diagram" style="max-width:70%; height:auto;" />
+  <img src="diagrams/phase3.jpeg" alt="System Flow Diagram" style="max-width:70%; height:auto;" />
 </p>
 
 ## Note
