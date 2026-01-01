@@ -28,6 +28,8 @@ A full-stack application that:
 
 ### Setup
 
+this is for phase 1.
+
 1. **Clone or download the project**
 
 ```bash
@@ -74,13 +76,38 @@ PORT=3000
    node src/scripts/runScraper.js
 ```
 
-this is for phase 1.
-
 6. **Start the server**
 
 ```bash
     node src/server.js
 ```
+
+For Phase 2:
+
+7. **Get api Key from OPENAI and SerpAI**
+   add to .env like:
+
+OPEN_AI KEY = "YOUR KEY"
+SERPAPI_KEY =" YOUR KEY"
+
+8. **Install openai package**
+
+```bash
+npm instal openai
+```
+
+9. **to work with llm api and fetch 2 links**
+
+```bash
+npm run rewrite
+```
+
+## For phase 3
+
+Although the problem statement mentions Laravel APIs, the backend was implemented using Node.js + Express with RESTful endpoints.
+So, using laveral api is not considered.
+
+10. ***
 
 ## System Flow Diagram
 
@@ -95,4 +122,12 @@ this is for phase 1.
 
 ---
 
-**Last Updated:** December 31, 2024
+## Note
+
+⚠️ Note on OpenAI API Usage
+
+The rewrite pipeline successfully integrates with the OpenAI API.
+However, execution may fail if the OpenAI account has no active
+billing or exceeds quota limits (HTTP 429).
+
+to use other free tier API then use gemini api or any open source llm api

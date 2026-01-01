@@ -1,31 +1,82 @@
-import * as articleService from "../services/articles.service.js";
+const articlesService = require("../services/articles.service");
 
-export async function scrapeArticles(req, res) {
+// Get all articles
+exports.getAllArticles = async (req, res) => {
   try {
-    const articles = await articleService.scrapeAndSaveArticles();
-    res.json(articles);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Failed to scrape articles" });
+    const { isRewritten, limit, offset } = req.query;
+
+    const filters = {};
+    if (isRewritten !== undefined) {
+      filters.isRewritten = isRewritten === "true";
+    }
+
+    const articles = await articlesService.getAllArticles(filters, {
+      limit: limit ? parseInt(limit) : undefined,
+      offset: offset ? parseInt(offset) : undefined,
+    });
+
+    res.json({ articles });
+  } catch (error) {
+    console.error("Error in getAllArticles:", error);
+    res.status(500).json({ error: error.message });
   }
-}
+};
 
-export async function getArticles(req, res) {
-  const articles = await articleService.getAllArticles();
-  res.json(articles);
-}
+// Get article by ID
+exports.getArticleById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const article = await articlesService.getArticleById(id);
 
-export async function getArticle(req, res) {
-  const article = await articleService.getArticleById(req.params.id);
-  res.json(article);
-}
+    if (!article) {
+      return res.status(404).json({ error: "Article not found" });
+    }
 
-export async function updateArticleController(req, res) {
-  const updated = await articleService.updateArticle(req.params.id, req.body);
-  res.json(updated);
-}
+    res.json({ article });
+  } catch (error) {
+    console.error("Error in getArticleById:", error);
+    res.status(500).json({ error: error.message });
+  }
+};
 
-export async function deleteArticleController(req, res) {
-  await articleService.deleteArticle(req.params.id);
-  res.json({ message: "Deleted" });
-}
+// Create new article
+exports.createArticle = async (req, res) => {
+  try {
+    const articleData = req.body;
+    const article = await articlesService.createArticle(articleData);
+    res.status(201).json({ article });
+  } catch (error) {
+    console.error("Error in createArticle:", error);
+    res.status(500).json({ error: error.message });
+  }
+};
+
+// Update article
+exports.updateArticle = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const articleData = req.body;
+    const article = await articlesService.updateArticle(id, articleData);
+
+    if (!article) {
+      return res.status(404).json({ error: "Article not found" });
+    }
+
+    res.json({ article });
+  } catch (error) {
+    console.error("Error in updateArticle:", error);
+    res.status(500).json({ error: error.message });
+  }
+};
+
+// Delete article
+exports.deleteArticle = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await articlesService.deleteArticle(id);
+    res.json({ message: "Article deleted successfully" });
+  } catch (error) {
+    console.error("Error in deleteArticle:", error);
+    res.status(500).json({ error: error.message });
+  }
+};

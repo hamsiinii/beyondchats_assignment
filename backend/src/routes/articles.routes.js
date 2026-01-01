@@ -1,32 +1,20 @@
-// backend/src/routes/articles.routes.js
-import express from "express";
-import {
-  getAllArticles,
-  getArticleById,
-  updateArticle,
-  deleteArticle,
-} from "../services/articles.service.js";
-
+const express = require("express");
 const router = express.Router();
+const articlesController = require("../controllers/articles.controller");
 
-router.get("/", async (req, res) => {
-  const articles = await getAllArticles();
-  res.json(articles);
-});
+// GET all articles
+router.get("/", articlesController.getAllArticles);
 
-router.get("/:id", async (req, res) => {
-  const article = await getArticleById(req.params.id);
-  res.json(article);
-});
+// GET single article by ID
+router.get("/:id", articlesController.getArticleById);
 
-router.put("/:id", async (req, res) => {
-  const updated = await updateArticle(req.params.id, req.body);
-  res.json(updated);
-});
+// POST create new article
+router.post("/", articlesController.createArticle);
 
-router.delete("/:id", async (req, res) => {
-  const deleted = await deleteArticle(req.params.id);
-  res.json(deleted);
-});
+// PUT update article
+router.put("/:id", articlesController.updateArticle);
 
-export default router;
+// DELETE article
+router.delete("/:id", articlesController.deleteArticle);
+
+module.exports = router;
