@@ -39,7 +39,8 @@ this is for phase 1.
 2. **Install dependencies**
 
 ```bash
-   npm install
+npm install
+npm install cors (in backend)
 ```
 
 3. **Set up Prisma**
@@ -55,7 +56,7 @@ npm install -g prisma
 2. Initialize the database
 
 ```bash
-   npx prisma migrate dev --name init
+npx prisma migrate dev --name init
 ```
 
 3. Generate Prisma client
@@ -73,16 +74,16 @@ PORT=3000
 5. **Run the scraper**
 
 ```bash
-   node src/scripts/runScraper.js
+node src/scripts/runScraper.js
 ```
 
 6. **Start the server**
 
 ```bash
-    node src/server.js
+node src/server.js
 ```
 
-For Phase 2:
+## For Phase 2:
 
 7. **Get api Key from OPENAI and SerpAI**
    add to .env like:
@@ -107,7 +108,16 @@ npm run rewrite
 Although the problem statement mentions Laravel APIs, the backend was implemented using Node.js + Express with RESTful endpoints.
 So, using laveral api is not considered.
 
-10. ***
+10. **Run frontend and Backend**
+
+```bash
+npm run dev
+```
+
+11. **Open localhosts**
+
+- http://localhost:5173/
+- http://localhost:3000/api/articles
 
 ## System Flow Diagram
 
@@ -116,11 +126,6 @@ So, using laveral api is not considered.
 </p>
 
 ## Live Links
-
-- Frontend: _Deploying soon_
-- Backend API: _Deploying soon_
-
----
 
 ## Note
 
