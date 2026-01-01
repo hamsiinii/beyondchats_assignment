@@ -39,8 +39,10 @@ this is for phase 1.
 2. **Install dependencies**
 
 ```bash
-npm install
-npm install cors (in backend)
+npm install (in both backend and frontend files)
+npm install cors express (in backend)
+
+
 ```
 
 3. **Set up Prisma**
@@ -125,7 +127,19 @@ npm run dev
   <img src="diagrams/Group 22.png" alt="System Flow Diagram" style="max-width:70%; height:auto;" />
 </p>
 
-## Live Links
+## Live woking site should lookk like
+
+**Phase 1**
+
+<p align="center">
+  <img src="diagrams/phase1.jpeg" alt="System Flow Diagram" style="max-width:70%; height:auto;" />
+</p>
+
+**Phase 3**
+
+<p align="center">
+  <img src="diagrams/phase2.jpeg" alt="System Flow Diagram" style="max-width:70%; height:auto;" />
+</p>
 
 ## Note
 
