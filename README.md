@@ -1,8 +1,4 @@
-# the assignment round for the position of Full Stack Web Developer Intern at BeyondChats.
-
-## Work in Progress
-
-This project is being actively developed as part of the BeyondChats internship assignment.
+# This project is developed as part of the BeyondChats assignment.
 
 ## Project Overview
 
